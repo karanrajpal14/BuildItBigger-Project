@@ -1,4 +1,4 @@
-package com.example.karan.jokeserver;
+package com.example.karan.myapplication.backend;
 
 /**
  * The object model for the data we are sending through endpoints

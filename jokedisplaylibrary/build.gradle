@@ -30,6 +30,5 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
     compile 'com.google.http-client:google-http-client-android:1.22.0'
-    compile project(path: ':JokeServer')
     compile 'com.google.api-client:google-api-client:1.22.0'
 }

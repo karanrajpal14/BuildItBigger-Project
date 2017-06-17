@@ -1,11 +1,9 @@
-package com.udacity.gradle.builditbigger;
-
 import android.content.Context;
 import android.os.AsyncTask;
 import android.support.v4.util.Pair;
 import android.widget.Toast;
 
-import com.example.karan.jokeserver.myApi.MyApi;
+import com.example.karan.myapplication.backend.myApi.MyApi;
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
 import com.google.api.client.googleapis.services.AbstractGoogleClientRequest;
