@@ -17,8 +17,7 @@ public class JokeFetchTest {
 
     @Test
     public void asyncTaskTest() throws Exception {
-        new EndpointsAsyncTask().execute(InstrumentationRegistry.getTargetContext());
-        Thread.sleep(5000);
+        new EndpointsAsyncTask().execute(InstrumentationRegistry.getTargetContext()).get();
         assertTrue("Error: Fetched joke: " + MainActivity.loadedJoke, MainActivity.loadedJoke != null);
     }
 }
