@@ -1,3 +1,4 @@
+import android.support.test.InstrumentationRegistry;
 import android.support.test.runner.AndroidJUnit4;
 
 import com.udacity.gradle.builditbigger.EndpointsAsyncTask;
@@ -16,9 +17,7 @@ public class JokeFetchTest {
 
     @Test
     public void asyncTaskTest() throws Exception {
-        MainActivity mainActivity = new MainActivity();
-        mainActivity.testFlag = true;
-        new EndpointsAsyncTask().execute(mainActivity);
+        new EndpointsAsyncTask().execute(InstrumentationRegistry.getTargetContext());
         Thread.sleep(5000);
         assertTrue("Error: Fetched joke: " + MainActivity.loadedJoke, MainActivity.loadedJoke != null);
     }
