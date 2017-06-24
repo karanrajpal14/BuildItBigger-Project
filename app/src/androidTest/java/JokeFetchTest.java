@@ -2,7 +2,6 @@ import android.support.test.InstrumentationRegistry;
 import android.support.test.runner.AndroidJUnit4;
 
 import com.udacity.gradle.builditbigger.EndpointsAsyncTask;
-import com.udacity.gradle.builditbigger.MainActivity;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -18,6 +17,6 @@ public class JokeFetchTest {
     @Test
     public void asyncTaskTest() throws Exception {
         new EndpointsAsyncTask().execute(InstrumentationRegistry.getTargetContext()).get();
-        assertTrue("Error: Fetched joke: " + MainActivity.loadedJoke, MainActivity.loadedJoke != null);
+        assertTrue("Error: Fetched joke: " + EndpointsAsyncTask.fetchedJoke, EndpointsAsyncTask.fetchedJoke != null);
     }
 }

@@ -8,7 +8,6 @@ import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static String loadedJoke;
     public boolean testFlag = false;
 
     @Override

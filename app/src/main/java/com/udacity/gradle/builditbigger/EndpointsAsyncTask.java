@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 
 import com.example.android.jokedisplaylibrary.JokeDisplayActivity;
 import com.example.karan.myapplication.backend.myApi.MyApi;
@@ -14,6 +13,7 @@ import com.google.api.client.extensions.android.json.AndroidJsonFactory;
 import java.io.IOException;
 
 public class EndpointsAsyncTask extends AsyncTask<Context, Void, String> {
+    public static String fetchedJoke = null;
     private static MyApi myApiService = null;
     private Context context;
 
@@ -37,9 +37,7 @@ public class EndpointsAsyncTask extends AsyncTask<Context, Void, String> {
     @Override
     protected void onPostExecute(String result) {
         try {
-            Log.d("AsyncT:", result);
-            MainActivity.loadedJoke = result;
-            Log.d("AsyncT:", MainActivity.loadedJoke);
+            fetchedJoke = result;
             Intent jokeIntent;
             jokeIntent = new Intent(context, JokeDisplayActivity.class);
             Bundle jokeBundle = new Bundle();
