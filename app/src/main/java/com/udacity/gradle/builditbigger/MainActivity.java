@@ -6,6 +6,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.example.karan.myapplication.backend.MyBean;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -38,6 +40,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void tellJoke(View view) {
         new EndpointsAsyncTask().execute(this);
+    }
+
+    public String jokeFetched() {
+        return new MyBean().getData();
     }
 
 }
