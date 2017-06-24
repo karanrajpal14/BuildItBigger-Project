@@ -15,6 +15,10 @@ public class JokeDisplayActivity extends AppCompatActivity {
         Bundle jokeBundle = getIntent().getBundleExtra(Intent.EXTRA_TEXT);
         String joke = jokeBundle.getString("jokeKey");
         TextView textView = (TextView) findViewById(R.id.jokeTextView);
-        textView.setText(joke);
+        if (joke != null) {
+            textView.setText(joke);
+        } else {
+            textView.setText("Jokes couldn't be fetched. Ensure you're connected to the internet and try again.");
+        }
     }
 }
