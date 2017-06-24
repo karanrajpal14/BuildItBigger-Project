@@ -12,7 +12,7 @@ import com.google.api.client.extensions.android.json.AndroidJsonFactory;
 
 import java.io.IOException;
 
-class EndpointsAsyncTask extends AsyncTask<Context, Void, String> {
+public class EndpointsAsyncTask extends AsyncTask<Context, Void, String> {
     private static MyApi myApiService = null;
     private Context context;
 
@@ -36,6 +36,7 @@ class EndpointsAsyncTask extends AsyncTask<Context, Void, String> {
     @Override
     protected void onPostExecute(String result) {
         try {
+            MainActivity.loadedJoke = result;
             Intent jokeIntent;
             jokeIntent = new Intent(context, JokeDisplayActivity.class);
             Bundle jokeBundle = new Bundle();

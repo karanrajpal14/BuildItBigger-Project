@@ -6,9 +6,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.example.karan.myapplication.backend.MyBean;
-
 public class MainActivity extends AppCompatActivity {
+
+    public static String loadedJoke;
+    public boolean testFlag = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,10 +41,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void tellJoke(View view) {
         new EndpointsAsyncTask().execute(this);
-    }
-
-    public String jokeFetched() {
-        return new MyBean().getData();
     }
 
 }
