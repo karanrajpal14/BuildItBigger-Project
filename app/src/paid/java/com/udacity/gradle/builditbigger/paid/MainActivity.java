@@ -1,6 +1,5 @@
 package com.udacity.gradle.builditbigger.paid;
 
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -11,9 +10,10 @@ import android.widget.ProgressBar;
 
 import com.udacity.gradle.builditbigger.EndpointsAsyncTask;
 import com.udacity.gradle.builditbigger.R;
+import com.udacity.gradle.builditbigger.onJokeFetched;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements onJokeFetched {
 
     public ProgressBar jokeLoadingProgressBar;
     Button tellJokeButton;
@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 jokeLoadingProgressBar.setVisibility(View.VISIBLE);
-                tellJoke(v);
+                new EndpointsAsyncTask().execute(getApplicationContext());
             }
         });
     }
@@ -57,15 +57,8 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void tellJoke(View view) {
-        AsyncTask asyncTask = new EndpointsAsyncTask().execute(this);
-        try {
-            if (asyncTask.get() != null) {
-                jokeLoadingProgressBar.setVisibility(View.GONE);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    @Override
+    public void onJokeFetched() {
+        jokeLoadingProgressBar.setVisibility(View.GONE);
     }
-
 }

@@ -30,7 +30,6 @@
 
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
-        android:onClick="tellJoke"
         android:text="@string/button_text"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -45,7 +44,6 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
-        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintLeft_toLeftOf="parent"

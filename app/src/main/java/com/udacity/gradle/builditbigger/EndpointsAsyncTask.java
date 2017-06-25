@@ -16,6 +16,15 @@ public class EndpointsAsyncTask extends AsyncTask<Context, Void, String> {
     public static String fetchedJoke = null;
     private static MyApi myApiService = null;
     private Context context;
+    private onJokeFetched listener;
+
+    public EndpointsAsyncTask() {
+
+    }
+
+    public EndpointsAsyncTask(onJokeFetched listener) {
+        this.listener = listener;
+    }
 
     @Override
     protected String doInBackground(Context... params) {
@@ -44,6 +53,7 @@ public class EndpointsAsyncTask extends AsyncTask<Context, Void, String> {
             jokeBundle.putString("jokeKey", result);
             jokeIntent.putExtra(Intent.EXTRA_TEXT, jokeBundle);
             context.startActivity(jokeIntent);
+            listener.onJokeFetched();
         } catch (Exception e) {
             e.printStackTrace();
         }
