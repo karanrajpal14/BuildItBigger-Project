@@ -27,9 +27,11 @@ android {
     productFlavors {
         free {
             applicationIdSuffix ".free"
+            buildConfigField('boolean', 'ADS', 'true')
         }
         paid {
             applicationIdSuffix ".paid"
+            buildConfigField('boolean', 'ADS', 'false')
         }
     }
     dexOptions {
