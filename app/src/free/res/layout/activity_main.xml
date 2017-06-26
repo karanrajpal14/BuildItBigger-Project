@@ -23,6 +23,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:id="@+id/tell_joke_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/instructions_text_view"
@@ -30,7 +31,6 @@
         android:layout_marginRight="8dp"
 
         android:layout_marginTop="8dp"
-        android:onClick="tellJoke"
         android:text="@string/button_text"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintLeft_toLeftOf="parent"
